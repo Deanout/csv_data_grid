@@ -1,0 +1,13 @@
+<div id="<%= dom_id example %>">
+  <%= content_tag(:div, "", data: {
+      controller: "datagrid",
+      datagrid_data: example.csv_to_json
+    }) do %>
+    <label>
+      <input type="checkbox" name="autosave" data-datagrid-target="autosave" checked>
+      Autosave
+    </label>
+    <button data-action="datagrid#download">Download</button>
+    <div data-target="datagrid.container"></div>
+  <% end %>
+</div>
